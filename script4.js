@@ -1,16 +1,16 @@
-let chanceUsuario;
-let areaUsuario;
+const numeroAdivinhacao = 7;
+let chute = "";
+let acertou = false;
 
-areaUsuario = prompt("Escolha um numero entre 0 e 10");
-while (chanceUsuario !=7) {
-    if (areaUsuario == 7){
-        alert("Parabéns você acertou!!");
+for(let contador = 0; contador < 3; contador++){    
+    chute = prompt("Tente adivinhar o número de 0 a 10:");
+    if(chute == numeroAdivinhacao){
+        alert(`Parabéns, você acertou! O número era ${numeroAdivinhacao}.`);
+        acertou = true;
+        break;
     }
-    else if (areaUsuario >10){
-        alert("Esse número não faz parte de nosso jogo, escolha outro e tente novamente");
-    }
-    else {
-        alert("Você errou, tente novamente!");
-    }
-    
+    alert("Errado!");
+}
+if(!acertou){
+    alert(`Infelizmente, você não acertou. O número era ${numeroAdivinhacao}!`);
 }
